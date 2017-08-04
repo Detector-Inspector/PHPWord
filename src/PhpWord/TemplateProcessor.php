@@ -456,7 +456,7 @@ class TemplateProcessor
         $fixedDocumentPart = $documentPart;
 
         $fixedDocumentPart = preg_replace_callback(
-            '|\$[^{]*\{[^}]*\}|U',
+            '|$[{]{[^}]}|U',
             function ($match) {
                 return strip_tags($match[0]);
             },
